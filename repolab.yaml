@@ -1,0 +1,42 @@
+name: visualbackprop
+
+base:
+  system: ubuntu
+  version: 16.04
+  cuda: 8.0
+
+apt-packages:
+  - python-software-properties
+  - software-properties-common
+  - libgraphicsmagick1-dev
+  - libfftw3-dev
+  - sox
+  - libsox-dev
+  - libsox-fmt-all
+  - build-essential
+  - gcc-4.9
+  - g++-4.9
+  - libgfortran-4.9-dev
+  - curl
+  - cmake
+  - libreadline-dev
+  - git-core
+  - libqt4-dev
+  - libjpeg-dev
+  - libpng-dev
+  - ncurses-dev
+  - imagemagick
+  - libzmq3-dev
+  - gfortran
+  - unzip
+  - gnuplot
+  - gnuplot-x11
+  - ipython
+
+source-packages:
+  - name: openblas
+    repo: https://github.com/xianyi/OpenBLAS.git
+    
+custom:
+  - git clone https://github.com/torch/distro.git ~/torch --recursive
+  - cd ~/torch && ./install.sh
