@@ -4,6 +4,7 @@ base:
   system: ubuntu
   version: 16.04
   cuda: 8.0
+  cudnn: 5
 
 apt-packages:
   - python-software-properties
