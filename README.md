@@ -1,5 +1,6 @@
 # VisualBackProp
-<a href="#roslab-run"><img src="https://img.shields.io/badge/ROSLab-run-brightgreen.svg"></a>
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/icra2018/visualbackprop.svg)](https://hub.docker.com/r/icra2018/visualbackprop)
+<a href="#how-to-run-with-docker"><img src="https://img.shields.io/badge/Docker-instructions-brightgreen.svg"></a>
 
 VisualBackProp - visualization method for convolutional neural networks
 
@@ -26,30 +27,16 @@ Script generates set of 3 images for each input image. Each set contain:
 * Averaged feature maps
 * Intermediate masks
 
-# ROSLab Run
+# How to Run with Docker
+## Linux
+#### Prerequisites
+* NVIDIA GPU with CUDA support
+* [nvidia-docker 2.0](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
 
-## Prerequisites:
-* [Docker](https://www.docker.com/)
-* [nvidia-docker](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
-* Tested on Ubuntu Linux 16.04, Docker version 18.06.1-ce, NVIDIA Driver version 410.48.
+Tested on Ubuntu 16.04.6 with Docker 18.06.1-ce, GPU GeForce 940M, NVIDIA Driver version 410.48.
 
-## 1. Clone the repository and build ROSLab image:
+1. Open a terminal and run the command:
 ```
-git clone https://github.com/ICRA-2018/VisualBackProp.git
-cd VisualBackProp
-./roslab_build
+nvidia-docker run --rm -p 8888:8888 icra2018/visualbackprop:latest
 ```
-## 2. Launch ROSLab image:
-```
-./roslab_run
-```
-## 3. Open JupyterLab in your browser:
-[http://localhost:8888/lab/tree/README.ipynb](http://localhost:8888/lab/tree/README.ipynb)
-
-## 4. Run in JupyterLab:
-```
-mkdir outputImages
-```
-```
-qlua run.lua
-```
+2. Run a web browser and open the link: [http://localhost:8888/lab/tree/README.ipynb](http://localhost:8888/lab/tree/README.ipynb)
